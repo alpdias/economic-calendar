@@ -14,13 +14,6 @@ import arrow
 import requests
 from bs4 import BeautifulSoup
 
-'''
-# mostra o horario atual da maquina para verificar junto com o horario da noticia
-agora = (datetime.now())
-minutos = (agora.minute)
-atual = ((agora.hour * 60) + minutos)
-'''
-
 def calendario(url): # funçao para obter as noticas do calendario economico a partir de um webscraping e tratando o html
 
 
@@ -102,7 +95,8 @@ while True:
     \nHorário: {horario}\
     \nImpacto da notícia: {impacto}\
     \nNotícia: {chamada.strip()}\
-    \nPara ver mais acesse: {link.strip()}') # noticia formatada 
+    \nPara ver mais acesse: {link.strip()}\
+    \n\') # noticia formatada 
 
     print(noticia)
 
