@@ -96,7 +96,7 @@ while True:
     \nImpacto da notícia: {impacto}\
     \nNotícia: {chamada.strip()}\
     \nPara ver mais acesse: {link.strip()}\
-    \n\') # noticia formatada 
+    \n') # noticia formatada 
 
     print(noticia)
 
