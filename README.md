@@ -2,7 +2,7 @@
 
 Script em Python para obter o calendário econômico do site https://br.investing.com/economic-calendar/
 
-Andamento -> <strong>90%</strong>
+Andamento -> <strong>100%</strong>
 
 Python 3.8.1 </br>
 Microsoft VSCode 1.45.1 </br>
@@ -21,7 +21,7 @@ pt-BR </br>
 
 Python script to obtain the website's economic calendar https://br.investing.com/economic-calendar/
 
-Progress -> <strong>90%</strong>
+Progress -> <strong>100%</strong>
 
 Python 3.8.1 </br>
 Microsoft VSCode 1.45.1 </br>
