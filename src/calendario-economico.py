@@ -91,12 +91,12 @@ while True:
     link = dados[4] # dado especifico para o link da noticia
     chamada = dados[5] # dado especifico para a chamada da noticia
 
-    noticia = (f'País: {pais.strip()}\
+    noticia = (f'País: {pais}\
     \nHorário: {horario}\
     \nImpacto da notícia: {impacto}\
-    \nNotícia: {chamada.strip()}\
-    \nPara ver mais acesse: {link.strip()}\
-    \n') # noticia formatada 
+    \nNotícia: {chamada}\
+    \nPara ver mais acesse: {link}\
+    \n').strip() # noticia formatada 
 
     print(noticia)
 
