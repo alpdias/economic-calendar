@@ -4,7 +4,7 @@ Script em Python para obter o calendário econômico do site https://br.investin
 
 Andamento -> <strong>100%</strong>
 
-Exemplo de uso: <strong>Calendário Econômico 🗓</strong> https://t.me/calendarioeconomico
+<strong>Calendário Econômico 🗓</strong> https://t.me/calendarioeconomico
 
 Python 3.8.1 </br>
 Microsoft VSCode 1.45.1 </br>
@@ -27,7 +27,7 @@ Python script to obtain the website's economic calendar https://br.investing.com
 
 Progress -> <strong>100%</strong>
 
-Example usage: <strong>Calendário Econômico 🗓</strong> https://t.me/calendarioeconomico
+<strong>Calendário Econômico 🗓</strong> https://t.me/calendarioeconomico
 
 Python 3.8.1 </br>
 Microsoft VSCode 1.45.1 </br>
