@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Created in 04/2020
+Criado em 04/2020
 @Autor: Paulo https://github.com/alpdias
 
 forked as an example https://github.com/freenetwork/investing.com.economic-calendar
