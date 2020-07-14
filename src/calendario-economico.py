@@ -4,7 +4,7 @@
 Criado em 04/2020
 @Autor: Paulo https://github.com/alpdias
 
-forked as an example https://github.com/freenetwork/investing.com.economic-calendar
+forked de exemplo como base https://github.com/freenetwork/investing.com.economic-calendar
 '''
 
 from datetime import datetime
