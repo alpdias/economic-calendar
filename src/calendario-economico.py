@@ -80,6 +80,9 @@ def calendario(url): # funçao para obter as noticas do calendario economico a p
 
 dados = (calendario('https://br.investing.com/economic-calendar/')) # dados obtidos do html
 
+print(dados) # lista com os dados
+print('')
+
 quantidade = (len(dados) / 6) # quantidade de noticias
 
 while True:
@@ -91,7 +94,7 @@ while True:
     link = dados[4] # dado especifico para o link da noticia
     chamada = dados[5] # dado especifico para a chamada da noticia
 
-    noticia = (f'País: {pais}\
+    noticia = (f'Local: {pais}\
     \nHorário: {horario}\
     \nImpacto da notícia: {impacto}\
     \nNotícia: {chamada}\
@@ -99,6 +102,7 @@ while True:
     \n').strip() # noticia formatada 
 
     print(noticia)
+    print('')
 
     for item in range(0, 6):
         del dados[0] # apaga as ultimas informaçoes ja usadas(6 primeiros itens na lista), para nao ter repetiçoes
