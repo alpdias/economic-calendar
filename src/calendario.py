@@ -7,6 +7,7 @@ Criado em 04/2020
 forked de exemplo como base https://github.com/freenetwork/investing.com.economic-calendar
 '''
 
+#bibliotecas importadas
 from datetime import datetime
 from time import sleep
 import datetime as DT
@@ -14,21 +15,26 @@ import arrow
 import requests
 from bs4 import BeautifulSoup
 
-def calendario(url): # funçao para obter as noticas do calendario economico a partir de um webscraping e tratando o html
+def calendario(url): 
+    
+    """
+    -> Funçao para obter as noticas do calendario economico a partir de um webscraping e tratando o html\
+    \n:param url:\
+    \n:return:\
+    """
 
-
-    ''' processo de requisiçao de dados no site '''
-
-
+    # processo de requisiçao de dados no site -->
+    
     url = url # site utilizado no webscraping
 
     cabeçalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para obter a requisiçao do site (site só aceita acesso por navegador)
 
     requisiçao = requests.get(url, headers=cabeçalho) # requisiçao dentro do site
+    
+     # processo de requisiçao de dados no site <--
 
 
-    ''' processo de tratamento do html '''
-
+    # processo de tratamento do html -->
 
     soup = BeautifulSoup(requisiçao.text, 'html.parser') # tratamento do html com o modulo 'bs4'
 
@@ -71,12 +77,13 @@ def calendario(url): # funçao para obter as noticas do calendario economico a p
         calendario.append('{}{}'.format(url, a['href'])) # separando a url da noticia com o url do site e tag de referencia html 'href'
 
         calendario.append(a.text.strip()) # separando a chamada na notica pela tag html 'a' (texto dentro da tag)
+        
+         # processo de tratamento do html <--
 
     return calendario # retorna a lista com as noticias
 
 
-''' uso dos dados em html tratados em variaveis '''
-
+# uso dos dados em html tratados em variaveis -->
 
 dados = (calendario('https://br.investing.com/economic-calendar/')) # dados obtidos do html
 
@@ -114,4 +121,5 @@ while True:
 
     else:
         pass
-
+    
+# uso dos dados em html tratados em variaveis <--
