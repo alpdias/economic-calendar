@@ -28,9 +28,11 @@ def calendario(url):
     
     url = url # site utilizado no webscraping
 
-    '''cabeçalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para obter a requisiçao do site (site só aceita acesso por navegador)
+    '''
+    cabeçalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para obter a requisiçao do site (site só aceita acesso por navegador)
 
-    requisiçao = requests.get(url, headers=cabeçalho) # requisiçao dentro do site'''
+    requisiçao = requests.get(url, headers=cabeçalho) # requisiçao dentro do site
+    '''
 
     scraper = cfscrape.create_scraper() # novo modelo de requiçao usando a biblioteca 'cfscraper'
 
