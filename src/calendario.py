@@ -12,7 +12,7 @@ from datetime import datetime
 from time import sleep
 import datetime as DT
 import arrow 
-import requests # bilbioteca bloqueada pelo CLOUDFLARE
+# import requests --> bilbioteca bloqueada pelo CLOUDFLARE
 import cfscrape # nova biblioteca de scraping
 from bs4 import BeautifulSoup
 
@@ -81,7 +81,7 @@ def calendario(url):
         evento = tr.find('td', {'class': 'event'})
         a = evento.find('a') # separando a tag html especifica 'a' para obter o nome e a url da noticia
 
-        calendario.append('{}{}'.format(url, a['href'])) # separando a url da noticia com o url do site e tag de referencia html 'href'
+        calendario.append('{}{}'.format('https://br.investing.com', a['href'])) # separando a url da noticia com o url do site e tag de referencia html 'href'
 
         calendario.append(a.text.strip()) # separando a chamada na notica pela tag html 'a' (texto dentro da tag)
         
