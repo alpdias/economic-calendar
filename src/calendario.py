@@ -16,6 +16,14 @@ import arrow
 import cfscrape # nova biblioteca de scraping
 from bs4 import BeautifulSoup
 
+'''
+
+Lista de paises completa = ['Inglaterra', 'África do Sul', 'EUA', 'Turquia', 'Cingapura', 'Suécia', 'Rússia', 'Portugal', 'Nova Zelândia', 'Noruega', 'Países Baixos', 'México', 'Coreia do Sul', 'Coreia do Norte', 'Japão', 'Itália', 'Índia', 'Irlanda', 'Indonésia', 'Hong Kong', 'Reino Unido', 'França', 'Zona Euro', 'Espanha', 'Alemanha', 'China', 'Suíça', 'Canadá', 'Brasil', 'Austrália', 'Argentina']
+
+'''
+
+seleçao = ['Inglaterra', 'EUA', 'Reino Unido', 'Zona Euro', 'Espanha', 'Alemanha', 'Japão', 'França', 'Nova Zelândia'] # especificaçao dos paises para selecionar as noticias
+
 def calendario(url): 
     
     """
@@ -35,7 +43,6 @@ def calendario(url):
     '''
 
     scraper = cfscrape.create_scraper() # novo modelo de requiçao usando a biblioteca 'cfscraper'
-
     requisiçao = scraper.get(url)
     
     # processo de requisiçao de dados no site <--
@@ -84,7 +91,19 @@ def calendario(url):
         calendario.append('{}{}'.format('https://br.investing.com', a['href'])) # separando a url da noticia com o url do site e tag de referencia html 'href'
 
         calendario.append(a.text.strip()) # separando a chamada na notica pela tag html 'a' (texto dentro da tag)
+
+        if bandeira.get('title') not in seleçao: # verificaçao de paises selecionados previamente
+            
+            for item in range(0, 6):
+                calendario.pop() # remoçao de paises nao selecionados previamente
         
+        else:
+
+            if len(touro) < 2: # filtro do impacto das noticias 
+
+                for i in range(0, 6):
+                    calendario.pop()
+
     # processo de tratamento do html <--
 
     return calendario # retorna a lista com as noticias
@@ -94,10 +113,16 @@ def calendario(url):
 
 dados = (calendario('https://br.investing.com/economic-calendar/')) # dados obtidos do html
 
+'''
 print(dados) # lista com os dados
 print('')
+'''
 
 quantidade = (len(dados) / 6) # quantidade de noticias
+    
+resumo = []
+
+resumo.append(' ')
 
 while True:
    
@@ -108,6 +133,7 @@ while True:
     link = dados[4] # dado especifico para o link da noticia
     chamada = dados[5] # dado especifico para a chamada da noticia
 
+    '''
     noticia = (f'Local: {pais}\
     \nHorário: {horario}\
     \nImpacto da notícia: {impacto}\
@@ -117,7 +143,24 @@ while True:
 
     print(noticia)
     print('')
+    '''
 
+    noticia = (f'Local: {pais} %% Horário: {horario} %% Impacto da notícia: {impacto} %%').strip()
+    
+    resumo.append(noticia)
+
+    for item in range(0, 6):
+        del dados[0] 
+
+    quantidade = quantidade - 1
+
+    if quantidade == 0:
+        break
+
+    else:
+        pass
+
+    '''
     for item in range(0, 6):
         del dados[0] # apaga as ultimas informaçoes ja usadas(6 primeiros itens na lista), para nao ter repetiçoes
 
@@ -128,5 +171,11 @@ while True:
 
     else:
         pass
-    
+    '''
+
 # uso dos dados em html tratados em variaveis <--
+
+resumoDia = f'Resumo do dia\
+        \n{resumo}'.replace('[','').replace(']','').replace(',','\n').replace('%%','\n').replace("'","")
+
+print(resumoDia)
